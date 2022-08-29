@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  line-height: 1;
 }
 
 .header {
@@ -31,6 +32,9 @@ body {
   border: 1px solid black;
   padding: 2px;
   max-width: 200px;
+  background: yellow;
+  font-size: 20px;
+  
 }
 
 .task + .task {
@@ -39,4 +43,14 @@ body {
 
 .task > * + * {
   margin-left: 4px;
+        font-size: 20px;
+}
+.description{
+    display: flex;
+      align-items: center;
+      border: 5px solid black;
+      padding: 2px;
+      max-width: 200px;
+      background: rgb(225, 191, 191);
+      font-size: 20px;
 }

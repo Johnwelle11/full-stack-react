@@ -12,6 +12,17 @@ const createServer = (pool) => {
     });
   });
 
+  app.post("/api/tasks", (req, res) => {
+    const { description } = req.body;
+    pool
+      .query("INSERT INTO tasks (description) VALUES ($1) RETURNING *", [
+        description,
+      ])
+      .then((result) => {
+        res.send(result.rows[0]);
+      });
+  });
+
   app.delete("/api/tasks/:id", async (req, res) => {
     const { id } = req.params;
 

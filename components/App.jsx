@@ -2,8 +2,12 @@ import React, { useEffect } from "react";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 import Tasks from "./Tasks.jsx";
+import axios from "axios";
+
+import TaskForm from "./TaskForm.jsx";
 import { useRecoilState } from "recoil";
 import { tasksState } from "./state.js";
+
 
 const App = () => {
   const [tasks, setTasks] = useRecoilState(tasksState);
@@ -21,6 +25,7 @@ const App = () => {
       <Header />
       <main className="main">
         <Tasks tasks={tasks} />
+        <TaskForm/>
       </main>
       <Footer />
     </>
